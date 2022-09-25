@@ -1,0 +1,31 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../config";
+import { IoLogoGithub } from "react-icons/io5";
+import FootprintIcon from "./icons/footprint";
+import ThemeToggleButton from "./ThemeToggleButton";
+---
+
+<header class='sticky w-full p-2 z-20 top-0 backdrop-blur-md'>
+  <div class='mx-auto max-w-3xl'>
+    <nav class='flex items-center gap-3 text-base'>
+      <h2 class='font-semibold tracking-tighter p-2 font-mplus text-lg'>
+        <a href='/' class='group flex items-center gap-1'>
+          <FootprintIcon />
+          Hosybinhkog - astro</a
+        >
+      </h2>
+      <div class='items-center gap-6 md:flex hidden'>
+        <HeaderLink href='/'>Home</HeaderLink>
+        <HeaderLink href='/blog'>Blog</HeaderLink>
+        <HeaderLink href='/about'>About</HeaderLink>
+        <HeaderLink href='https://github.com/hosybinhkog' target='_blank'>
+          <IoLogoGithub />
+          GitHub</HeaderLink
+        >
+      </div>
+      <div class='flex-1'></div>
+      <ThemeToggleButton client:load />
+    </nav>
+  </div>
+</header>
